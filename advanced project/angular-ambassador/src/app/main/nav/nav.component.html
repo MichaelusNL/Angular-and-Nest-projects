@@ -1,0 +1,43 @@
+<header
+  class="d-flex flex-colum align-items-center p-3 px-md-4 border-bottom shadow-sm"
+>
+  <p class="h5 my-0 me-auto fw-normal">
+    <a
+      routerLink="/"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="p-1 text-decoration-none"
+      routerLinkActive="text-decoration-underline"
+      >Frontend</a
+    >
+    <a
+      routerLink="/backend"
+      class="p-1 text-decoration-none"
+      routerLinkActive="text-decoration-underline"
+      >Backend</a
+    >
+  </p>
+
+  <ng-container *ngIf="!user">
+    <a class="btn btn-outline-primary m-1" routerLink="/login">Login</a>
+    <a class="btn btn-outline-primary" routerLink="/register">Sign up</a>
+  </ng-container>
+
+  <nav class="my-2 my-md-0 me-md-3" *ngIf="user">
+    <a routerLink="/stats" class="p-2 text-dark text-decoration-none" href="#"
+      >Stats</a
+    >
+    <a
+      routerLink="/rankings"
+      class="p-2 text-dark text-decoration-none"
+      href="#"
+      >Rankings</a
+    >
+    <a class="p-2 text-dark text-decoration-none" href="#" (click)="logout()"
+      >Logout</a
+    >
+  </nav>
+
+  <a class="btn btn-outline-primary" routerLink="/profile" *ngIf="user"
+    >{{ user?.firstName }} {{ user?.lastName }}</a
+  >
+</header>

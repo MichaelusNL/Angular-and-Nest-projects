@@ -1,0 +1,65 @@
+<main class="form-signin w-100 m-auto">
+  <form (submit)="submit()">
+    <h1 class="h3 mb-3 fw-normal">Please register</h1>
+
+    <div class="form-floating">
+      <input
+        name="firstName"
+        [(ngModel)]="firstName"
+        class="form-control"
+        placeholder="First Name"
+        required
+      />
+      <label for="floatingInput">First Name</label>
+    </div>
+
+    <div class="form-floating">
+      <input
+        name="lastName"
+        [(ngModel)]="lastName"
+        class="form-control"
+        placeholder="Last Name"
+        required
+      />
+      <label for="floatingInput">Last Name</label>
+    </div>
+
+    <div class="form-floating">
+      <input
+        name="email"
+        [(ngModel)]="email"
+        type="email"
+        class="form-control"
+        placeholder="name@example.com"
+        required
+      />
+      <label for="floatingInput">Email address</label>
+    </div>
+
+    <div class="form-floating">
+      <input
+        name="password"
+        [(ngModel)]="password"
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        required
+      />
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="form-floating">
+      <input
+        name="passwordConfirm"
+        [(ngModel)]="passwordConfirm"
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        required
+      />
+      <label for="floatingPassword">PasswordConfirm</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+  </form>
+</main>

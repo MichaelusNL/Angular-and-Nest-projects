@@ -1,0 +1,27 @@
+<form class="mt-3" [formGroup]="form" (submit)="submit()">
+  <div class="mb-3">
+    <label class="me-2">First Name</label>
+    <input type="form-control" name="firstName" formControlName="firstName" />
+  </div>
+
+  <div class="mb-3">
+    <label class="me-2">Last Name</label>
+    <input type="form-control" name="lastName" formControlName="lastName" />
+  </div>
+
+  <div class="mb-3">
+    <label class="me-2">Email</label>
+    <input type="form-control" name="email" formControlName="email" />
+  </div>
+
+  <div class="mb-3">
+    <label class="me-2">Role</label>
+    <select name="roleId" class="form-control" formControlName="roleId">
+      <option *ngFor="let role of roles" [ngValue]="role.id">
+        {{ role.name }}
+      </option>
+    </select>
+  </div>
+
+  <button class="btn btn-outline-secondary">Save</button>
+</form>
